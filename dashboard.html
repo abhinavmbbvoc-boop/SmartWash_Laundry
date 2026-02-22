@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #00796b;
+        }
+        .user-info {
+            background: #e0f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .order-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .order-list li {
+            background: #e3f2fd;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .logout {
+            display: block;
+            width: 100%;
+            background-color: #d32f2f;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .logout:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span id="user-name"></span></h1>
+        <div class="user-info">
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+        </div>
+
+        <h2>Your Orders</h2>
+        <ul class="order-list" id="orders">
+            <!-- Order details will be injected here -->
+        </ul>
+
+        <a href="signin.html" class="logout" id="logout">Log Out</a>
+    </div>
+
+    <script>
+        // Retrieve user data from localStorage
+        var user = JSON.parse(localStorage.getItem("user"));
+
+        if (!user) {
+            alert("You are not signed in. Redirecting to sign-in page...");
+            window.location.href = "signin.html";
+        } else {
+            document.getElementById("user-name").textContent = user.name;
+            document.getElementById("user-email").textContent = user.email;
+            document.getElementById("user-phone").textContent = user.phone;
+            
+            var orderList = document.getElementById("orders");
+            user.orders.forEach(order => {
+                var li = document.createElement("li");
+                li.textContent = `Order #${order.id}: ${order.item} x ${order.quantity} - ${order.status}`;
+                orderList.appendChild(li);
+            });
+        }
+
+        document.getElementById("logout").addEventListener("click", function() {
+            localStorage.removeItem("user");
+        });
+    </script>
+</body>
+</html>
