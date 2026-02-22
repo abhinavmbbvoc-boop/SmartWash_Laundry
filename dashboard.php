@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: signin.html");
-    exit;
+if (!isset($_SESSION["user"])) {
+    header("Location: index.html");
+    exit();
 }
 ?>
 
-<h2>Welcome <?php echo $_SESSION['user_name']; ?> 🎉</h2>
-
+<h1>Welcome <?php echo $_SESSION["user"]; ?> 👋</h1>
 <a href="logout.php">Logout</a>

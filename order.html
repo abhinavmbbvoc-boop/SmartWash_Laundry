@@ -1,9 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION["user"])) {
+    header("Location: index.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laundryaa - Order Dry Cleaning</title>
+<title>Laundryaa - Place Order</title>
 
 <style>
 body{
@@ -58,28 +66,35 @@ button:hover{
 .cart-box li{
     padding:5px 0;
 }
+
+.counter{
+    text-align:center;
+    font-weight:bold;
+    margin:10px 0;
+    color:#444;
+}
 </style>
 </head>
 
 <body>
-
+<a href="myorders.php">My Orders</a>
 <div class="container">
 
 <h1>Order Dry Cleaning</h1>
 
-<form id="orderForm" action="order.php" method="POST">
+<form id="orderForm" action="order_process.php" method="POST">
 
 <!-- STEP 1 -->
-<h2>Step 1: Select Service</h2>
+<h2>Step 1: Select Items</h2>
 
-<label>Clothing</label>
-<select id="clothing" onchange="updateItems()">
+<label>Clothing Type</label>
+<select id="clothing">
 <option value="">Select</option>
 <option value="Shirt">Shirt</option>
 <option value="T-Shirt">T-Shirt</option>
 <option value="Pants">Pants</option>
 <option value="Jeans">Jeans</option>
-<option value="0ther">Otherwise</option>
+<option value="Other">Other</option>
 </select>
 
 <label>Special Items</label>
@@ -90,18 +105,15 @@ button:hover{
 <option value="Cashmere Scarf">Cashmere Scarf</option>
 </select>
 
-<!-- STEP 2 -->
-<h2>Step 2: Add Items</h2>
-
-<label>Item</label>
-<select id="itemSelect">
-<option value="">Choose item</option>
-</select>
-
 <label>Quantity</label>
 <input type="number" id="qty" min="1" value="1">
 
 <button type="button" onclick="addToCart()">Add Item</button>
+
+<!-- CART -->
+<h2>Step 2: Cart</h2>
+
+<p class="counter">Total Items: <span id="count">0</span></p>
 
 <div class="cart-box">
 <ul id="cart"></ul>
@@ -109,14 +121,13 @@ button:hover{
 
 <input type="hidden" name="cartData" id="cartData">
 
-<!-- STEP 3 -->
-<h2>Step 3: Address</h2>
+<!-- ADDRESS -->
+<h2>Step 3: Delivery Details</h2>
 
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="text" name="phone" placeholder="Phone Number" required>
+<input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Phone Number" required>
 <input type="text" name="address" placeholder="Delivery Address" required>
 
-<!-- STEP 4 -->
+<!-- SUBMIT -->
 <h2>Step 4: Submit</h2>
 <button type="submit">Place Order</button>
 
@@ -126,27 +137,18 @@ button:hover{
 <script>
 let cart = [];
 
-function updateItems(){
-    let clothing = document.getElementById("clothing").value;
-    let dropdown = document.getElementById("itemSelect");
-
-    dropdown.innerHTML = '<option value="">Choose item</option>';
-
-    if(clothing){
-        let opt = document.createElement("option");
-        opt.value = clothing;
-        opt.textContent = clothing;
-        dropdown.appendChild(opt);
-    }
-}
-
 function addToCart(){
-    let item = document.getElementById("itemSelect").value;
+    let clothing = document.getElementById("clothing").value;
     let special = document.getElementById("special").value;
     let qty = document.getElementById("qty").value;
 
-    if(item){
-        cart.push(item + " x" + qty);
+    if(!clothing && !special){
+        alert("Select at least one item");
+        return;
+    }
+
+    if(clothing){
+        cart.push(clothing + " x" + qty);
     }
 
     if(special){
@@ -167,9 +169,10 @@ function renderCart(){
     });
 
     document.getElementById("cartData").value = cart.join(",");
+    document.getElementById("count").textContent = cart.length;
 }
 
-// Prevent empty cart submit
+// Prevent empty cart
 document.getElementById("orderForm").addEventListener("submit",function(e){
     if(cart.length === 0){
         alert("Add at least one item!");
