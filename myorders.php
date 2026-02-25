@@ -3,7 +3,7 @@ session_start();
 $conn = new mysqli("localhost", "root", "", "laundryaa");
 
 if (!isset($_SESSION["user"])) {
-    header("Location: index.html");
+    header("Location: newlongin.html");
     exit();
 }
 

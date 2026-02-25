@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssss", $name, $mobile, $email, $hashed);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Registered Successfully'); window.location='index.html';</script>";
+        echo "<script>alert('Registered Successfully'); window.location='home.html';</script>";
     } else {
         echo "Error";
     }

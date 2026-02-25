@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 
 // Check login
 if (!isset($_SESSION["user"])) {
-    header("Location: index.html");
+    header("Location: home.html");
     exit();
 }
 
