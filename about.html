@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Laundry</title>
-    <meta name="description" content="">
+    <title>Laundry - About Us</title>
+    <meta name="description" content="Learn about our laundry and dry cleaning services, company achievements, and how we work">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
@@ -24,292 +24,524 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .map-area {
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+        }
+        
+        .map-area h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 32px;
+            text-transform: capitalize;
+        }
+        
+        .map-area iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            display: block;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-tittle h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .section-tittle .element {
+            color: #007bff;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .single-cat {
+            padding: 40px 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            background: #f9f9f9;
+        }
+        
+        .single-cat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        
+        .cat-icon {
+            margin-bottom: 25px;
+        }
+        
+        .cat-icon img {
+            height: 80px;
+            width: auto;
+        }
+        
+        .cat-cap h5 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .cat-cap h5 a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .cat-cap h5 a:hover {
+            color: #007bff;
+        }
+        
+        .cat-cap p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #0056b3;
+            color: #fff;
+        }
+        
+        .wantToWork-area {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/img/gallery/section_bg01.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin: 50px 0;
+        }
+        
+        .wants-wrapper {
+            padding: 80px 50px;
+        }
+        
+        .wantToWork-caption h2 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .wantToWork-caption p {
+            color: #fff;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .wantToWork-btn {
+            background: #fff;
+            color: #333;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .wantToWork-btn:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .wantToWork-btn img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .map-area {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .map-area h2 {
+                font-size: 24px;
+            }
+            
+            .section-tittle h2 {
+                font-size: 28px;
+            }
+            
+            .wants-wrapper {
+                padding: 40px 20px;
+            }
+            
+            .wantToWork-caption h2 {
+                font-size: 28px;
+            }
+            
+            .single-cat {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!-- ? Preloader Start -->
+    <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="assets/img/logo/loder.png" alt="Loading...">
                 </div>
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
+
+    <!-- Header Start -->
     <header>
-        <!-- Header Start -->
         <div class="header-area">
             <div class="main-header header-sticky">
-                <!-- Logo -->
-                <div class="header-left">
-                    <div class="logo">
-                        <a href="home.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                    </div>
-                    <div class="menu-wrapper  d-flex align-items-center">
-                        <!-- Main-menu -->
-                        <div class="main-menu d-none d-lg-block">
-                            <nav> 
-                                <ul id="navigation">                                                                                          
-                                    <li><a href="home.html">Home</a></li>
-                                    <li class="active"><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="newlongin.html">Login</a></li>
-                                    <li><a href="order.html">order</a></li>
-                                </ul>
-                            </nav>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-2">
+                            <div class="logo">
+                                <a href="home.html">
+                                    <img src="assets/img/logo/logo.png" alt="Laundry Logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="home.html">Home</a></li>
+                                            <li class="active"><a href="about.html">About</a></li>
+                                            <li><a href="services.html">Services</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="newlogin.html">Login</a></li>
+                                            <li><a href="order.html">Order</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                     </div>
-                </div> 
-                <!-- Mobile Menu -->
-                <div class="col-12">
-                    <div class="mobile_menu d-block d-lg-none"></div>
                 </div>
             </div>
         </div>
-        <!-- Header End -->
     </header>
+
     <main>
-        <!--? Hero Start -->
+        <!-- Hero Start -->
         <div class="slider-area2 section-bg2 hero-overly" data-background="assets/img/hero/hero2.png">
             <div class="slider-height2 d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2">
-                                <h2>About us</h2>
+                                <h2>About Us</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Hero End -->
-        <!--? About Area  -->
-        <section class="about-area2 section-padding40">
+
+        <!-- About Area Start -->
+        <section class="about-area2 section-padding40 py-5">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
                         <!-- about-img -->
-                        <div class="about-img ">
-                            <img src="assets/img/gallery/about1.png" alt="">
+                        <div class="about-img">
+                            <img src="assets/img/gallery/about1.png" alt="About Laundry Services">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12">
+                    <div class="col-lg-6 col-md-12">
                         <div class="about-caption mb-50">
                             <!-- Section Tittle -->
                             <div class="section-tittle mb-25">
-                                <h2>About company</h2>
+                                <span class="element">Who We Are</span>
+                                <h2>About Company</h2>
                             </div>
                             <p class="mb-20">
-                                The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!
+                                The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes with professional care and attention to detail.
                             </p>
-                            <p class="mb-30">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p>
-
-                            <a href="about.html" class="btn">About Us</a>
+                            <p class="mb-30">
+                                We take pride in delivering exceptional laundry and dry cleaning services to our customers. Our state-of-the-art equipment and eco-friendly products ensure your garments receive the best care possible.
+                            </p>
+                            <a href="services.html" class="btn">Our Services</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- About Area End -->
-        <!--? Services Area Start -->
-        <section class="services-area border-bottom pb-20 mb-60">
+
+        <!-- Services Area Start -->
+        <section class="services-area border-bottom pb-20 mb-60 py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8">
                         <div class="section-tittle text-center mb-55">
                             <span class="element">Our Process</span>
-                            <h2>This is how we work</h2>
+                            <h2>This Is How We Work</h2>
+                            <p class="mt-3">Experience the perfect blend of technology and care in every step</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-cat text-center">
                             <div class="cat-icon">
-                                <img src="assets/img/icon/services-icon1.svg" alt="">
+                                <img src="assets/img/icon/services-icon1.svg" alt="Collection Service">
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="services.html">We collect your clothes</a></h5>
-                                <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p>
+                                <h5><a href="services.html">We Collect Your Clothes</a></h5>
+                                <p>Free pickup from your doorstep at your scheduled time. We ensure safe handling and transportation of your garments.</p>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-cat text-center">
                             <div class="cat-icon">
-                                <img src="assets/img/icon/services-icon2.svg" alt="">
+                                <img src="assets/img/icon/services-icon2.svg" alt="Washing Service">
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="services.html">Wash your clothes</a></h5>
-                                <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p>
+                                <h5><a href="services.html">Wash Your Clothes</a></h5>
+                                <p>Professional cleaning with eco-friendly products. We treat each fabric with specialized care for best results.</p>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="single-cat text-center">
                             <div class="cat-icon">
-                                <img src="assets/img/icon/services-icon3.svg" alt="">
+                                <img src="assets/img/icon/services-icon3.svg" alt="Delivery Service">
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="services.html">Get delivery</a></h5>
-                                <p>The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p>
+                                <h5><a href="services.html">Get Delivery</a></h5>
+                                <p>Fresh, clean clothes delivered back to you within 24-48 hours. Neatly folded and packaged with care.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Services End -->
-        <!--? Want To work -->
+
+        <!-- Want To work Section -->
         <section class="container">
-            <section class="wantToWork-area" data-background="assets/img/gallery/section_bg01.png">
+            <div class="wantToWork-area" data-background="assets/img/gallery/section_bg01.png">
                 <div class="wants-wrapper w-padding2">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-xl-8 col-lg-9 col-md-7">
                             <div class="wantToWork-caption wantToWork-caption2">
-                                <h2>Call us for a service</h2>
-                                <p>We deliver the goods to the most complicated places on earth</p>
+                                <h2>Call Us For A Service</h2>
+                                <p>We deliver the goods to the most complicated places on earth with timely and professional service</p>
                             </div>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-5">
-                            <a href="services.html" class="btn wantToWork-btn"><img src="assets/img/icon/call2.png" alt=""> Learn More</a>
+                            <a href="services.html" class="btn wantToWork-btn">
+                                <img src="assets/img/icon/call2.png" alt="Call Icon"> Learn More
+                            </a>
                         </div>
-                    </div>
-                </div>
-            </section>
-        </section>
-       
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Testimonials_end -->
-        <!--? Company achievement Start -->
-        <section class="services-area section-padding40 fix">
+
+        <!-- Company Achievement Start -->
+        <section class="services-area section-padding40 fix py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8">
                         <div class="section-tittle text-center mb-55">
-                            <h2>Company achievement</h2>
+                            <span class="element">Our Milestones</span>
+                            <h2>Company Achievement</h2>
+                            <p class="mt-3">Years of excellence in laundry services</p>
                         </div>
                     </div>
                 </div>
-    
-                    
-        <!--?  Map Area start  -->
-        <div class="Map-area">
-            <h1>see our lacation</h1>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15655.643264046617!2d75.84209078278705!3d11.19423422369475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65a7d44f38971%3A0x3e4f202596bc766b!2sFarook%20College%2C%20Kerala!5e0!3m2!1sen!2sin!4v1773480500722!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <!-- Add achievement stats here if needed -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-cat text-center">
+                            <h3 class="counter">10+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-cat text-center">
+                            <h3 class="counter">50k+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-cat text-center">
+                            <h3 class="counter">100k+</h3>
+                            <p>Garments Cleaned</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-cat text-center">
+                            <h3 class="counter">24/7</h3>
+                            <p>Customer Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Area Start -->
+        <div class="map-area">
+            <h2>See Our Location</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15655.643264046617!2d75.84209078278705!3d11.19423422369475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65a7d44f38971%3A0x3e4f202596bc766b!2sFarook%20College%2C%20Kerala!5e0!3m2!1sen!2sin!4v1773480500722!5m2!1sen!2sin" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps Location">
+            </iframe>
         </div>
-        <!-- Map Area End -->
     </main>
+
+    <!-- Footer Start -->
     <footer>
-        <!-- Footer Start-->
         <div class="footer-area footer-padding">
             <div class="container">
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
-                     <div class="single-footer-caption mb-50">
-                       <div class="single-footer-caption mb-30">
-                        <!-- logo -->
-                        <div class="footer-logo mb-35">
-                            <a href="home.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                        </div>
-                        <div class="footer-tittle">
-                            <div class="footer-pera">
-                                <p>Your expert laundry and dry cleaning service. Affordable, high-quality care with convenience and efficiency. Trust us for all your laundry needs.</p>
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo mb-35">
+                                    <a href="home.html">
+                                        <img src="assets/img/logo/logo2_footer.png" alt="Footer Logo">
+                                    </a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p>Your expert laundry and dry cleaning service. Affordable, high-quality care with convenience and efficiency. Trust us for all your laundry needs.</p>
+                                    </div>
+                                </div>
+                                <!-- social -->
+                                <div class="footer-social">
+                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                </div>
                             </div>
                         </div>
-                        <!-- social -->
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                    
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Services</h4>
+                                <ul>
+                                    <li><a href="#">- Dry Cleaning</a></li>
+                                    <li><a href="#">- Wet Cleaning</a></li>
+                                    <li><a href="#">- Ironing Services</a></li>
+                                    <li><a href="#">- Laundry Service</a></li>
+                                    <li><a href="#">- Laundry App</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                <div class="single-footer-caption mb-50">
-                    <div class="footer-tittle">
-                        <h4>Services </h4>
-                        <ul>
-                            <li><a href="#">- Dry Cleaning</a></li>
-                            <li><a href="#">- Dry Clean</a></li>
-                            <li><a href="#">- Ironing Services</a></li>
-                            <li><a href="#">- Laundry Service London</a></li>
-                            <li><a href="#">- Laundry App</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                <div class="single-footer-caption mb-50">
-                    <div class="footer-tittle">
-                        <h4>Get in touch</h4>
-                        <ul>
-                            <li class="number"><a href="#">(90) 898 789-8957</a></li>
-                            <li><a href="#">laundry|165@gmail.com</a></li>
-                            <li><a href="#">789/A, Green road NYC-9089</a></li>
-                        </ul>
+                    
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Get in Touch</h4>
+                                <ul>
+                                    <li class="number"><a href="tel:+908987898957">(90) 898 789-8957</a></li>
+                                    <li><a href="mailto:laundry165@gmail.com">laundry165@gmail.com</a></li>
+                                    <li><a href="#">789/A, Green Road<br>NYC-9089</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </footer>
+
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#" aria-label="Back to top">
+            <i class="fas fa-level-up-alt"></i>
+        </a>
     </div>
 
-</footer>
-<!-- Scroll Up -->
-<div id="back-top" >
-    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-</div>
-
-<!-- JS here -->
-
-<script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-<!-- Jquery, Popper, Bootstrap -->
-<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="./assets/js/popper.min.js"></script>
-<script src="./assets/js/bootstrap.min.js"></script>
-<!-- Jquery Mobile Menu -->
-<script src="./assets/js/jquery.slicknav.min.js"></script>
-
-<!-- Jquery Slick , Owl-Carousel Plugins -->
-<script src="./assets/js/owl.carousel.min.js"></script>
-<script src="./assets/js/slick.min.js"></script>
-<!-- One Page, Animated-HeadLin -->
-<script src="./assets/js/wow.min.js"></script>
-<script src="./assets/js/animated.headline.js"></script>
-<script src="./assets/js/jquery.magnific-popup.js"></script>
-
-<!-- Date Picker -->
-<script src="./assets/js/gijgo.min.js"></script>
-<!-- Nice-select, sticky -->
-<script src="./assets/js/jquery.nice-select.min.js"></script>
-<script src="./assets/js/jquery.sticky.js"></script>
-<!-- Progress -->
-<script src="./assets/js/jquery.barfiller.js"></script>
-
-<!-- counter , waypoint,Hover Direction -->
-<script src="./assets/js/jquery.counterup.min.js"></script>
-<script src="./assets/js/waypoints.min.js"></script>
-<script src="./assets/js/jquery.countdown.min.js"></script>
-<script src="./assets/js/hover-direction-snake.min.js"></script>
-
-<!-- contact js -->
-<script src="./assets/js/contact.js"></script>
-<script src="./assets/js/jquery.form.js"></script>
-<script src="./assets/js/jquery.validate.min.js"></script>
-<script src="./assets/js/mail-script.js"></script>
-<script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-
-<!-- Jquery Plugins, main Jquery -->	
-<script src="./assets/js/plugins.js"></script>
-<script src="./assets/js/main.js"></script>
-
+    <!-- JS here -->
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="./assets/js/gijgo.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/jquery.barfiller.js"></script>
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
